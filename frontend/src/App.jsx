@@ -15,7 +15,8 @@ export default function App() {
     setLoading(true)
     setError(null)
     try {
-      const response = await fetch("/api/analyze", { method: "POST", body: formData })
+      const API = import.meta.env.VITE_API_URL || "https://agrisense-p0x7.onrender.com"
+      const response = await fetch(`${API}/api/analyze`, { method: "POST", body: formData })
       if (!response.ok) {
         const err = await response.json()
         throw new Error(err.detail || "Analysis failed")
