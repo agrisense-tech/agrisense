@@ -26,7 +26,10 @@ app = FastAPI(
 app.add_middleware(GZipMiddleware, minimum_size=1000)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=[ "http://localhost:5173",
+    "https://agrisense-lemon.vercel.app",
+    "https://agrisense-git-main-agrisense-techs-projects.vercel.app",
+    os.getenv("FRONTEND_URL", "")],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -65,3 +68,4 @@ def root():
             "GET  /api/alerts/languages — supported languages",
         ]
     }
+
