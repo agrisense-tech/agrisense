@@ -10,6 +10,8 @@ from routes.recommend import router as recommend_router
 from routes.weather_market import router as weather_router
 from routes.history import router as history_router
 from routes.alerts import router as alerts_router
+from routes.auth import router as auth_router
+from models.user import User
 from ml.soil_model import train_model
 import os, logging
 
@@ -39,6 +41,7 @@ app.include_router(recommend_router)
 app.include_router(weather_router)
 app.include_router(history_router)
 app.include_router(alerts_router)
+app.include_router(auth_router)
 
 
 @app.on_event("startup")
@@ -68,4 +71,5 @@ def root():
             "GET  /api/alerts/languages — supported languages",
         ]
     }
+
 
