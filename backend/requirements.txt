@@ -6,11 +6,11 @@ python-multipart==0.0.9
 python-dotenv==1.0.1
 requests==2.32.2
 httpx==0.27.0
-joblib==1.4.2
+joblib
 pillow
-numpy==1.26.4
-pandas==2.2.2
-scikit-learn==1.5.0
-opencv-python-headless==4.9.0.80
+numpy
+pandas
+scikit-learn
+opencv-python-headless
 python-jose[cryptography]
 passlib[bcrypt]
